@@ -26,6 +26,8 @@ eventBus.emit('my-event', 'Hello', 'world', '!');
 removeHandler();
 ```
 
+[Live Demo](https://micaste.github.io/simple-event-bus/build/) and [its source code](https://github.com/micaste/simple-event-bus/tree/gh-pages).
+
 ## Features
 
 * An error in one of the handlers will not stop the propagation of the event to other handlers.
