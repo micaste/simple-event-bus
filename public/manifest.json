@@ -1,0 +1,8 @@
+{
+  "short_name": "Simple Event Bus",
+  "name": "simple-event-bus demo",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
