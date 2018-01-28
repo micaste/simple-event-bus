@@ -46,9 +46,13 @@ Returns the event bus instance, that holds the handlers and is able to dispatch 
 
 Registers the handler for the given action. Optionally, a handlerId can be passed, that will be used when logging errors. It returns a function that removes the handler when called.
 
-#### `eventBus.emit(action: string, ...parameters: any)`
+#### `eventBus.emit(action: string, ...parameters: any): number`
 
 Emits an event, dispatching it to all registered handlers. It does not do anything if no handlers have been registered on that event.
+
+#### `eventBus.handlersCount(action: string)`
+
+Returns the number of handlers currently subscribed to the action.
 
 ### `[options = {}]`
 
@@ -66,16 +70,16 @@ Default: `(action, ...payload) => payload`
 
 A function to customize the interface between events and handlers, giving the ability for example to standardize all the messages transmitted to the handlers into a normalized format. By default, the broker just propagates the arguments that have been emitted.
 
-## Note
+## Compatibility
 
-The implementation uses the native [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map). It is supported since node 4 and has a good support in modern browsers. See the [ECMAScript 6 compatibility table](http://kangax.github.io/compat-table/es6/#test-Map)
+The node entry point (`"main": "index.js"` in the `package.json`) requires Node >= 6.5 (see [ES6 compatibility table for class](http://kangax.github.io/compat-table/es6/#test-class)). The browser entry point ("browser": "browser.js" in the `package.json`) exposes some code bundled and transpiled into ES5 for compatibility with older browsers, bundlers, minifiers, ...
 
 ## Future
 
-[ ] More logging: Currently, we only log errors. We could log more information, to help with troubleshooting.
+* [ ] More logging: Currently, we only log errors. We could log more information, to help with troubleshooting.
 
-[ ] Log level: We could add a logLevel option, to allow filtering the log messages while still keeping the default logger.
+* [ ] Log level: We could add a logLevel option, to allow filtering the log messages while still keeping the default logger.
 
-[ ] Test framework: A better test framework (for example [Jest](https://facebook.github.io/jest/)) should be used in order to for example have a test coverage report.
+* [ ] Test framework: A better test framework (for example [Jest](https://facebook.github.io/jest/)) should be used in order to for example have a test coverage report.
 
-[ ] Examples: A showcase application could be built as a demo, showing the interest of using a custom logger and broker in a real-case example.
+* [ ] Examples: A showcase application could be built as a demo, showing the interest of using a custom logger and broker in a real-case example.
