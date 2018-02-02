@@ -7,7 +7,7 @@
     "react": "16.2.0",
     "react-dom": "16.2.0",
     "react-scripts": "1.1.0",
-    "simple-event-bus": "../simple-event-bus"
+    "simple-event-bus": "1.0.1"
   },
   "devDependencies": {
     "prettier": "1.10.2"
