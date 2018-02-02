@@ -1,6 +1,6 @@
 {
   "name": "simple-event-bus",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple event bus library, without dependencies",
   "main": "index.js",
   "browser": "./browser.js",
